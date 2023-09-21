@@ -1,0 +1,5 @@
+installing requests
+py pip install requests 
+
+listing pip installed packaged 
+py -m list pip
