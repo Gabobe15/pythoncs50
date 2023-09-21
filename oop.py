@@ -1,31 +1,29 @@
 # classes you own data in python and give them values 
 class Student:
-    def __init__(self, name, house, patrnous):
+    def __init__(self, name, house):
         if not name:
             raise ValueError("Missing name")
         if house not in ["afmadow", "dhoobley", "kismayo", "nairobi"]:
             raise ValueError("Invalid house")
         self.name = name
         self.house = house
-        self.patrnous = patrnous
         
     def __str__(self):
         return f"{self.name} from {self.house}"
     
-    def charm(self):
-        if self.patrnous == "Stage":
-            return "horse"
-        elif self.patrnous == "Otter":
-            return "shoe"
-        elif self.patrnous == "Jack Russell terrier":
-            return "Cat"
-        else:
-            return "magic spell"
+    # def charm(self):
+    #     if self.patrnous == "Stage":
+    #         return "horse"
+    #     elif self.patrnous == "Otter":
+    #         return "shoe"
+    #     elif self.patrnous == "Jack Russell terrier":
+    #         return "Cat"
+    #     else:
+    #         return "magic spell"
     
 def main():
     student = get_student()
-    print("Expecto patrnous")
-    print(student.charm())
+    print(student)
      
     
 def get_student():
@@ -37,8 +35,7 @@ def get_student():
 # two 
    name = input("Name: ")
    house = input("House: ")
-   patrnous = input("patrnous: ")
-   return Student(name, house, patrnous)
+   return Student(name, house)
   
 if __name__ == "__main__":
     main()
