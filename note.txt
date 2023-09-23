@@ -3,3 +3,24 @@ py pip install requests
 
 listing pip installed packaged 
 py -m list pip
+
+
+methods in python oop
+
+def __init__(self, name, house)
+
+self -   give you access to current object created
+
+if not name = if name = "" : these two do the same thing
+
+
+def __str__(str, name, house)
+
+string 
+
+
+@property : is a function in python
+we can have decorators - to define properties 
+
+
+getters and setters - controlls over the input

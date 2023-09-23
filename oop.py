@@ -1,45 +1,179 @@
 # classes you own data in python and give them values 
-class Student:
-    def __init__(self, name, house):
-        if not name:
-            raise ValueError("Missing name")
-        if house not in ["afmadow", "dhoobley", "kismayo", "nairobi"]:
-            raise ValueError("Invalid house")
-        self.name = name
-        self.house = house
+# class Student:
+#     def __init__(self, name, house):
+#         self.name = name
+#         self.house = house
         
-    def __str__(self):
-        return f"{self.name} from {self.house}"
+#     def __str__(self):
+#         return f"{self.name} from {self.house}"
     
-    # def charm(self):
-    #     if self.patrnous == "Stage":
-    #         return "horse"
-    #     elif self.patrnous == "Otter":
-    #         return "shoe"
-    #     elif self.patrnous == "Jack Russell terrier":
-    #         return "Cat"
-    #     else:
-    #         return "magic spell"
+#     # getter 
+#     @property
+#     def name(self):
+#         return self._name
     
-def main():
-    student = get_student()
-    print(student)
+#     @property
+#     def house(self):
+#         return self._house
+    
+#     # setter 
+#     @name.setter
+#     def name(self, name):
+#         if not name:
+#             raise ValueError("Missing name ")
+#         self._name = name
+    
+#     @house.setter
+#     def house(self, house):
+#         if house not in ["afmadow", "dhoobley", "kismayo", "nairobi"]:
+#             raise ValueError("invalid house")
+#         self._house = house
+    
+    
+# def main():
+#     student = get_student()
+#     print(student)
      
     
-def get_student():
+# def get_student():
 #    name = input("Name: ")
 #    house = input("House: ")
 #    student = Student(name, house)
 #    return student
 
 # two 
-   name = input("Name: ")
-   house = input("House: ")
-   return Student(name, house)
+#    name = input("Name: ")
+#    house = input("House: ")
+#    return Student(name, house)
   
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
+# import random
+
+# class Hat():
+#     def __init__(self):
+#         self.houses = ["12 street", "Section 3", "Section 3", "Jam street"]
+    
+#     def sort(self, name):
+#         print(name, "is in", random.choice(self.houses))
+
+
+# hat = Hat()
+# hat.sort("harry")
+
+# option two 
+# class Hat():
+    
+#     houses = ["12 street", "Section 3", "Section 3", "Jam street"]
+    
+#     @classmethod
+#     def sort(cls, name):
+#         print(name, "is in", random.choice(cls.houses))
+    
+# Hat.sort("harry")
+
+
+
+
+# class Student():
+#     def __init__(self,name, house):
+#         self.name = name
+#         self.house = house
+    
+#     def __str__(self):
+#         return f"{self.name} from {self.house}"
+    
+#     @classmethod
+#     def get(cls):
+#         name = input("Name: ")
+#         house = input("House: ")
+#         return cls(name, house)
+   
+# you can print directly or use main function todo the job for you  
+# student = Student.get()
+# print(student)
+    
+# def main():
+#     student = Student.get()
+#     print(student)
+  
+# if __name__ == "__main__":
+#     main()
+
+# if you matual paramater create a seperate class and use inheritance toward the children classes 
+
+# class Wizard:
+#     def __init__(self, name):
+#         if not name:
+#             raise ValueError("Missing name")
+#         self.name = name
+    
+#     def __str__(self):
+#         return f"{self.name}"
+#     ...
+
+# class Student(Wizard):
+#     def __init__(self,name, house):
+#         super().__init__(name)  # passing name from parrent
+#         self.house = house
+        
+#     def __str__(self):
+#         return f"{self.name} from {self.house}"
+#     ...
+    
+# class Professor(Wizard):
+#     def __init__(self, name, subject):
+#         super().__init__(name)
+#         self.subject = subject
+    
+#     def __str__(self):
+#         return f"{self.name} from {self.subject}"
+#     ...
+
+
+# wizard = Wizard("jinijinow")
+# student = Student("Abdirahman", "Ikhlas apartment")
+# proffesor = Professor("Mohamed", "Computer programing")
+
+# print(wizard)
+# print(student)
+# print(proffesor)
+
+
+
+class Vault():
+    def __init__(self, galleons=0, sickles=0, knuts=0):
+        self.galleons = galleons
+        self.sickles = sickles
+        self.knuts = knuts
+        
+    def __str__(self) :
+        return f"{self.galleons} galleons, {self.sickles} sickles, {self.knuts} knuts"
+    
+    # operator overloading 
+    def __add__(self, other):
+        galleons = self.galleons + other.galleons
+        sickles = self.sickles + other.sickles
+        knuts = self.knuts + other.knuts
+        return Vault(galleons, sickles, knuts)
+        
+potter = Vault(100, 50, 25)
+print(potter)
+weasley = Vault(100, 50, 25)
+print(potter)
+
+total = potter + weasley
+print(total)
+
+
+
+
+
+
+
+
+# functional 
 
 # def main():
     # first approach 
